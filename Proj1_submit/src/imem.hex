@@ -1,0 +1,58 @@
+//    addi $1, $0, 0xFFFF # Load an initial value
+3c010000
+3421ffff
+00010820
+//    sll $2, $1, 0  # verify that shifting 0 works
+00011000
+//    sll $3, $1, 0  # verify that shifting 0 works
+
+
+//	lui $t0, 50
+3c080032
+//	lui $t1, 0xFFFF
+3c09ffff
+//	xor $t2,$t1,$t0
+01285026
+//	halt
+50000000
+// 	addi $8, $8, 3
+21080003
+//	xor $8, $8, 3
+39080003
+// addi $t0, $t0, 0x00000001
+21080001
+// lui $t4, 0xFFFF
+3C0CFFFF
+// addi $t1, $zero, 1
+20090001
+// addi $t2, $zero, -2
+200AFFFE
+// add $t3, $t2, $t1
+01495820
+// addiu $t3, $t2, 1
+254B0001
+// addu $t3, $t2, $t1
+01495821
+// sw $t4, 0xF($t1)
+AD2c000F
+// lw $t5, 0xF($t1)
+8D2D000F
+
+// addi $t1, $zero, -1
+2009FFFF
+// addi $t2, $zero, 2
+200A0002
+// add $t3, $t2, $t1
+01495820
+// addi $t1, $zero, 1
+20090001
+// addi $t2, $zero, -2
+200AFFFE
+// add $t3, $t2, $t1
+01495820
+// addi $t1, $zero, -1
+2009FFFF
+// addi $t2, $zero, -2
+200AFFFE
+// add $t3, $t2, $t1
+01495820
